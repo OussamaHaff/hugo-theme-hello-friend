@@ -17,5 +17,8 @@
 {{ $theme := resources.Get "js/theme.js" | js.Build }}
 {{ $bundle := slice $menu $prism $theme | resources.Concat "bundle.js" | resources.Minify }}
 <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
-
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script data-goatcounter="https://oussamahaff.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 {{- partial "extended_footer.html" . }}
